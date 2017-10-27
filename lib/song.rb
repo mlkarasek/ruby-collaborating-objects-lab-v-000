@@ -11,13 +11,14 @@ class Song
 end
 
 def self.new_by_filename(filename)
-  song = Song.new
-  song.save
-  song
-  song = self.new_by_filename
-  song.name = filename.split(" - ")[1]
-  new_song.artist_name = filename.split(" - ")[0]
-  new_song
-end
+  division = filename.split(" - ")
+  artist_name = division[0]
+  song_name = division[1].gsub(".mp3", "")
+
+  song = self.new
+  song.name = song_name
+  song.artist_name = artist_name
+  song 
+end 
 
 end
